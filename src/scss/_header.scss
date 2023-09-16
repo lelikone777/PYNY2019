@@ -1,0 +1,284 @@
+.header {
+  position: relative;
+  background-color: $color-light;
+  transition: background-color 0.3s;
+
+  &__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 0;
+    transition: padding 0.3s;
+  }
+
+  &__menu {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0;
+    display: flex;
+    background-color: $color-light;
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    transition: all 0.5s ease-in-out;
+
+    @media screen and (min-width: $xl) {
+      position: relative;
+      top: initial;
+      left: initial;
+      right: initial;
+      bottom: initial;
+      height: initial;
+      transition: initial;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @media screen  and (min-width: $xxl) {
+      flex: 1;
+    }
+
+    &.open {
+      height: calc(100dvh - 60px);
+      transition: all 0.5s ease-in-out;
+      opacity: 1;
+      visibility: visible;
+      z-index: 100;
+    }
+
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: 100%;
+      padding: 46px 0 40px;
+      overflow-y: auto;
+      transition: all 0.5s ease-in-out;
+
+      @media screen and (min-width: $xl) {
+        padding: 0;
+        flex-direction: row;
+        column-gap: 30px;
+        overflow: hidden;
+      }
+
+      @media screen  and (min-width: $xxl) {
+          column-gap: 130px;
+      }
+    }
+
+    &-top {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      background-color: $color-light;
+      margin: 0 auto;
+
+      @media screen and (min-width: $xl) {
+        flex-direction: row;
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      @media screen and (min-width: $xl) {
+        flex-direction: row;
+        border-left: 1px solid #C4C4C4;
+      }
+    }
+
+    &-item {
+      display: flex;
+      justify-content: center;
+    }
+
+    &-link {
+      display: flex;
+      justify-content: center;
+      padding: 10px 20px;
+      width: 100%;
+      height: 100%;
+      color: $color-primary;
+      font-size: 22px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: normal;
+
+      @media screen and (min-width: $xl) {
+        font-size: 16px;
+      }
+
+      &:hover {
+        transition: all 0.3s;
+        color: $color-accent;
+        transform: scale(1.05);
+      }
+    }
+
+    &-button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 20px;
+      background-color: transparent;
+      border: 2px solid $color-secondary;
+      padding: 10px 20px;
+      color: $color-secondary;
+      font-size: 22px;
+      font-weight: 400;
+      line-height: normal;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      @media screen and (min-width: $xl) {
+        margin-top: 0;
+        font-size: 19px;
+        padding: 4px 20px;
+      }
+
+      &:hover {
+        color: $color-accent;
+        border: 2px solid $color-accent;
+        transition: all 0.3s;
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  &__socials {
+    margin-top: 40px;
+
+    @media screen and (min-width: $xl) {
+      display: flex;
+      align-items: center;
+      margin-top: 0;
+    }
+
+    &-list {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      column-gap: 13px;
+    }
+
+    &-item {
+      display: flex;
+      max-width: 30px;
+      height: 24px;
+      transition: all 0.3s;
+
+      &:hover {
+        box-shadow: #FFB32C 0 0 8px 2px;
+        background-color: rgba(255, 179, 44, 0.7);
+        transition: all 0.3s;
+        transform: scale(1.1);
+      }
+    }
+
+    &-link {
+      display: flex;
+      flex-shrink: 0;
+      width: 100%;
+      height: 100%;
+      transition: all 0.3s;
+
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  &__logo {
+    max-width: 190px;
+    font-size: 28px;
+    font-family: 'Helvetica Neue lt', sans-serif;
+    color: $color-primary;
+    transition: all 0.3s;
+
+    @media screen  and (min-width: $xl) {
+      padding-right: 22px;
+    }
+
+    @media screen  and (min-width: $xxl) {
+      padding-right: 30px;
+    }
+
+    &:hover {
+      color: $color-accent;
+      transition: all 0.3s;
+      transform: scale(1.05);
+    }
+  }
+
+  &__burger {
+    width: 25px;
+    height: 22px;
+    cursor: pointer;
+
+    @media screen and (min-width: $xl) {
+      display: none;
+    }
+
+    &:hover {
+      .header__burger-line, .header__burger-line::before, .header__burger-line::after {
+        background-color: $color-accent;
+        transition: all 0.3s;
+        transform: scale(1.05);
+      }
+    }
+
+    &-line, &-line::before, &-line::after {
+      left: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $color-primary;
+      transition: all 0.3s;
+    }
+
+    &-line {
+      position: relative;
+      display: block;
+      top: 50%;
+      transform: translateY(-50%);
+
+      &:before, &:after {
+        content: '';
+        position: absolute;
+      }
+
+      &:before {
+        top: 8px;
+      }
+
+      &:after {
+        bottom: 8px;
+      }
+    }
+
+    &.open {
+      .header__burger-line {
+        transform: rotate(45deg);
+        background-color: $color-accent;
+      }
+
+      .header__burger-line::before {
+        transform: translateY(0) rotate(0deg);
+        top: 0;
+      }
+
+      .header__burger-line::after {
+        transform: translateY(0) rotate(-90deg);
+        bottom: 0;
+      }
+    }
+  }
+}

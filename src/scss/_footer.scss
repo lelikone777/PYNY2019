@@ -1,0 +1,60 @@
+.footer {
+    background-color: $color-primary;
+
+    &__info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        color: $color-light;
+        padding: 100px 0 90px;
+    }
+
+    &__email,
+    &__phone,
+    &__address {
+        &:hover {
+            color: $color-accent;
+            transition: all 0.3s;
+        }
+    }
+
+    &__email {
+        color: $color-light;
+        text-align: center;
+        font-size: 28px;
+        font-weight: 300;
+        line-height: 1.4;
+
+        @media screen and (min-width: $lg) {
+            font-size: 40px;
+        }
+    }
+
+    &__phone {
+        color: $color-light;
+        text-align: center;
+        font-size: 22px;
+        font-weight: 300;
+        line-height: 1.4;
+
+        @media screen and (min-width: $lg) {
+            font-size: 32px;
+        }
+    }
+
+    &__address {
+        margin-top: 30px;
+        color: $color-light;
+        text-align: center;
+        font-size: 18px;
+        font-weight: 300;
+        line-height: 140%;
+        text-decoration-line: underline;
+        transition: all 0.3s;
+
+        @media screen and (min-width: $lg) {
+            font-size: 22px;
+        }
+    }
+}

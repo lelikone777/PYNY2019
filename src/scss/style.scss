@@ -1,0 +1,68 @@
+@import "reset-css/sass/reset.scss";
+@import "vars.scss";
+@import "fonts.scss";
+@import "header.scss";
+@import "hero.scss";
+@import "speakers.scss";
+@import "form.scss";
+@import "footer.scss";
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Helvetica Neue Regular', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.container {
+    max-width: $sm-container;
+    margin: 0 auto;
+
+    @media screen and (min-width: $md) {
+        max-width: $md-container;
+    }
+
+    @media screen and (min-width: $lg) {
+        max-width: $lg-container;
+    }
+
+    @media screen and (min-width: $xl) {
+        max-width: $xl-container;
+    }
+
+    @media screen and (min-width: $xxl) {
+        max-width: $xxl-container;
+    }
+
+    &--inner {
+        @media screen and (min-width: $md) {
+            padding: 0 44px;
+        }
+
+        @media screen and (min-width: $xxl) {
+            padding: 0 160px;
+        }
+    }
+
+}
+
+
+
+
+
+
+

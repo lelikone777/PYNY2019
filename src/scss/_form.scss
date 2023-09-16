@@ -1,0 +1,132 @@
+.form {
+  padding: 100px 0 0;
+  background-color: $color-primary;
+
+  &__title {
+    margin: 0 auto 75px;
+    color: $color-light;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 1.4;
+
+    @media screen and (min-width: $lg) {
+      margin: 0 auto 60px;
+      font-size: 60px;
+    }
+  }
+  &__group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 26px;
+    column-gap: 26px;
+    margin-bottom: 140px;
+
+    @media screen and (min-width: $lg) {
+      margin-bottom: 28px;
+    }
+  }
+  &__input {
+    background-color: $color-light;
+    height: 52px;
+    padding: 12px 32px;
+    width: 100%;
+    border: none;
+    color: rgba(0, 0, 0, 0.50);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 1.4;
+
+    &.invalid {
+      border: 3px solid $color-error;
+    }
+
+    &::placeholder {
+      color: rgba(0, 0, 0, 0.50);
+    }
+
+    &-name {
+      //@media screen and (min-width: $lg) {
+      //  width: calc(50% - 13px);
+      //}
+    }
+
+    &-email {
+      //@media screen and (min-width: $lg) {
+      //  width: calc(50% - 13px);
+      //}
+    }
+
+    &-message {
+      //height: 124px;
+      resize: none;
+      height: 100%;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.50);
+      }
+    }
+    &-wrap {
+      position: relative;
+      &_name {
+        width: 100%;
+        @media screen and (min-width: $lg) {
+          width: calc(50% - 13px);
+        }
+      }
+      &_email {
+        width: 100%;
+        @media screen and (min-width: $lg) {
+          width: calc(50% - 13px);
+        }
+      }
+      &_message {
+        height: 120px;
+        width: 100%;
+      }
+    }
+  }
+
+  &__label {
+    display: none;
+    position: absolute;
+    top: -20px;
+    left: 22px;
+    color: $color-error;
+    font-size: 14px;
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 242px;
+    margin: 0 auto;
+    background-color: $color-secondary;
+    padding: 26px 14px;
+    color: $color-light;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.4;
+    letter-spacing: 4.2px;
+    text-transform: uppercase;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+
+    &:hover {
+      background-color: $color-secondary-transparent;
+      transition: all 0.3s;
+      transform: scale(1.05);
+    }
+
+    @media screen and (min-width: $lg) {
+      margin: 0 0 0 auto;
+    }
+
+  }
+}
